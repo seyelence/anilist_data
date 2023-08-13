@@ -1,13 +1,8 @@
 import time
-import csv
 import requests
-import pandas as pd
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import MetaData, create_engine
-from sqlalchemy import Table, Column, Integer, Float, Date, String, Boolean
 
 API_ENDPOINT = 'https://graphql.anilist.co'
-PER_PAGE = 1
+PER_PAGE = 100
 
 # GraphQL query
 query = '''
@@ -70,7 +65,7 @@ def fetch_all_anime_data():
     total_anime = response['data']['Page']['pageInfo']['total']
     last_page = response['data']['Page']['pageInfo']['lastPage']
 
-    for page in range(1, 10):
+    for page in range(1, last_page + 1):
         response = fetch_anime_data(page)
         anime_list = response['data']['Page']['media']
         all_anime_details += anime_list

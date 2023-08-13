@@ -30,7 +30,6 @@ def create_anime_info_table(engine, if_exists='replace'):
   metadata.create_all(engine)
   print("Table is created.")
 
-
 def insert_data_to_anime_info_table(engine, csv_file):
   global anime_info_table 
   df = pd.read_csv(csv_file).fillna('NO VALUE')

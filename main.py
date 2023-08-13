@@ -1,8 +1,7 @@
-import time
 from fetch_data import fetch_all_anime_data
 from write_csv import write_anime_csv
 from database import create_anime_info_table, insert_data_to_anime_info_table
-from sqlalchemy import MetaData, create_engine
+from sqlalchemy import create_engine
 
 def main():
     all_anime_details = fetch_all_anime_data()
