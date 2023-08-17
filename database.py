@@ -1,6 +1,6 @@
 import pandas as pd
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import MetaData, create_engine, Table, Column, Integer, String, Boolean
+from sqlalchemy import MetaData, create_engine, Table, Column, Integer, String
 
 def create_anime_info_table(engine, if_exists='replace'):
   global anime_info_table

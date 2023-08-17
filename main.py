@@ -7,7 +7,6 @@ def main():
     all_anime_details = fetch_all_anime_data()
     csv_file = 'anime_data.csv'
     write_anime_csv(all_anime_details, csv_file)
-
     connection_string = 'mssql+pyodbc://@THAMANYS-DESKTO/Anime_Collection?trusted_connection=yes&driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes'
     engine = create_engine(connection_string, fast_executemany=True)
     create_anime_info_table(engine, if_exists='replace')
