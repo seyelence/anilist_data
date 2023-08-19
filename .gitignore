@@ -1,3 +1,7 @@
 __pycache__/
-anime_data.csv
+
+# variables
 .env
+
+# output file
+anime_data.csv
