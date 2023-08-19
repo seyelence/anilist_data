@@ -18,4 +18,4 @@ def write_anime_csv(data, file_name):
             ', '.join(anime['genres'])
         ])
 
-  print("Writing to CSV is done")
+  print("writing data into csv is completed .......")

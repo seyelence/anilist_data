@@ -28,7 +28,7 @@ def create_anime_info_table(engine, if_exists='replace'):
   if if_exists == 'replace':
     anime_info_table.drop(engine, checkfirst=True)
   metadata.create_all(engine)
-  print("Table is created.")
+  print("table is created or replaced")
 
 def insert_data_to_anime_info_table(engine, csv_file):
   global anime_info_table 
@@ -60,4 +60,4 @@ def insert_data_to_anime_info_table(engine, csv_file):
 
   session.commit()
   session.close()
-  print("Data has been inserted into the table.")
+  print("data has been inserted into table")

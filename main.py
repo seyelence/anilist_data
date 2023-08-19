@@ -6,8 +6,7 @@ import os
 from dotenv import load_dotenv
 
 def main():
-    target_total_entries = 16000  
-    all_anime_details = fetch_all_anime_data(target_total_entries)
+    all_anime_details = fetch_all_anime_data(17200) # the amount of entries to fetch
     csv_file = 'anime_data.csv'
     write_anime_csv(all_anime_details, csv_file)
     
