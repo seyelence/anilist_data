@@ -4,7 +4,6 @@ import requests
 API_ENDPOINT = 'https://graphql.anilist.co'
 PER_PAGE = 50
 
-# GraphQL query
 query = '''
 # Define which variables will be used in the query (page, per page)
 query ($page: Int, $perPage: Int) {
@@ -69,9 +68,7 @@ def fetch_all_anime_data(target_total_entries):
     response = fetch_anime_data(page)
     anime_list = response['data']['Page']['media']
     all_anime_details += anime_list
-
-    print("Page:", page)
-    print("Total Entries:", len(all_anime_details))
+    print("Page:", page, "\t Total Entries: ", len(all_anime_details))
 
     total_entries += len(anime_list)
     page += 1

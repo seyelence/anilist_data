@@ -1,8 +1,6 @@
 import csv
 
 def write_anime_csv(data, file_name):
-  print("Beginning to write to csv.")
-  
   with open(file_name, 'w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
     writer.writerow(['Anime ID', 'Romaji Title', 'English Title', 'Description', 'Episodes', 'Start Date', 'End Date',
@@ -19,5 +17,5 @@ def write_anime_csv(data, file_name):
             anime['averageScore'], anime['isAdult'],
             ', '.join(anime['genres'])
         ])
-        
+
   print("Writing to CSV is done")
